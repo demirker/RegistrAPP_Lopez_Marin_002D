@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-title slot="start">Recuperacion de cuenta</ion-title>
+
+    <ion-img slot="end" class="imagen"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Logo_DuocUC.svg/711px-Logo_DuocUC.svg.png">
+    </ion-img>
+    <ion-avatar class="centrado-logo">
+      <img src="/assets/logo.png">
+    </ion-avatar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <h6>Ingrese correo de recuperacion</h6>
+      <ion-list>
+        <ion-item>
+          <ion-input type="email" placeholder="Correo"></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <ion-buttons slot="start">
+        <ion-back-button
+          defaultHref="/"
+          text="Cancelar"
+          color="warning"
+          mode="ios"
+        >
+        </ion-back-button>
+        <ion-button routerLink="/inicio"
+          color="warning"
+          mode="ios"
+        >Recuperar cuenta</ion-button>
+      </ion-buttons>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

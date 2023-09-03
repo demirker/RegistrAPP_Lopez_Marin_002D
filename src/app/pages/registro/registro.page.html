@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-title slot="start">registro</ion-title>
+
+    <ion-img slot="end" class="imagen"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Logo_DuocUC.svg/711px-Logo_DuocUC.svg.png">
+    </ion-img>
+    <ion-avatar class="centrado-logo">
+      <img src="/assets/logo.png">
+    </ion-avatar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-input type="email" placeholder="Correo"></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <ion-list>
+        <ion-item>
+          <ion-input type="password" placeholder="Contraseña"></ion-input>
+
+          <ion-input type="password" placeholder="Confirmar contraseña"></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <ion-list>
+        <ion-item>
+          <ion-input type="number" placeholder="Telefono de contacto (opcional)"></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <ion-buttons slot="start">
+        <ion-back-button
+          defaultHref="/"
+          text="Cancelar"
+          color="warning"
+          mode="ios"
+        >
+        </ion-back-button>
+        <ion-button routerLink="/inicio"
+          color="warning"
+          mode="ios"
+        >Crear Cuenta</ion-button>
+      </ion-buttons>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

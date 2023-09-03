@@ -1,0 +1,63 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-list>
+        <ion-item>
+          <ion-title>Alumno Pedrito</ion-title>
+          <ion-avatar slot="end">
+            <img src="/assets/avatar-alumno.png">
+          </ion-avatar>
+        </ion-item>
+      </ion-list>
+      
+      <ion-list>
+        <ion-item>
+          <ion-buttons slot="start">
+            <ion-back-button
+              defaultHref="/"
+              text="Cerrar Sesion"
+              color="warning"
+              mode="ios"
+            >
+            </ion-back-button>
+          </ion-buttons>
+        </ion-item>
+      </ion-list>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar color="warning">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-avatar class="centrado-logo2">
+        <img src="/assets/logo.png">
+      </ion-avatar>
+      <ion-img slot="end" class="imagen"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Logo_DuocUC.svg/711px-Logo_DuocUC.svg.png">
+      </ion-img>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-button expand="full" (click)="toggleImagen()" class="centrado" id="asistencia" color="warning"
+      >Escanear QR</ion-button>
+
+    <ion-alert
+      trigger="asistencia"
+      header="Registro de asistencia"
+      message="Asistencia registrada"
+      [buttons]="alertButtons"
+    ></ion-alert>
+    
+    <img *ngIf="mostrarImagen" src="/assets/QR-escaneado.jpg" class="centrado2">
+    
+  </ion-content>
+</div>
