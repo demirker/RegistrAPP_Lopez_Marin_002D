@@ -1,0 +1,23 @@
+<ion-content class="background_negro">
+  <ion-card class="centrado-carta">
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-input [(ngModel)]="credenciales.correo"
+          type="email" placeholder="Correo"></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <ion-list>
+        <ion-item>
+          <ion-input [(ngModel)]="credenciales.contra"
+          type="password" placeholder="Contraseña" maxlength="9"></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <ion-button (click)="login()"
+        class="centrado-contenido" color="warning"
+        >iniciar sesion</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

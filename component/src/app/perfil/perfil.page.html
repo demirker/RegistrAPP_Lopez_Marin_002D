@@ -1,0 +1,42 @@
+<ion-content class="background_negro">
+  <ion-card class="centrado-carta">
+    <ion-card-content>
+      <ion-list>
+        <ion-item lines="none">
+          <h1>Nombre:</h1>
+          <ion-label *ngIf="resultados.length > 0">
+            {{resultados[0].nombre}}</ion-label>
+          <ion-icon (click)="editar('nombre')" slot="end" name="create"></ion-icon>
+        </ion-item>
+        
+        <ion-item lines="none">
+          <h1>Apellido:</h1>
+          <ion-label *ngIf="resultados.length > 0">
+            {{resultados[0].apellido}}</ion-label>
+          <ion-icon (click)="editar('apellido')" slot="end" name="create"></ion-icon>
+        </ion-item>
+
+        <ion-item lines="none">
+          <h1>Correo:</h1>
+          <ion-label *ngIf="resultados.length > 0">
+            {{resultados[0].correo}}</ion-label>
+        </ion-item>
+
+        <ion-item lines="none">
+          <h1>Contacto:</h1>
+          <ion-label *ngIf="resultados.length > 0">
+            {{resultados[0].contacto}}</ion-label>
+          <ion-icon (click)="editar('contacto')" slot="end" name="create"></ion-icon>
+        </ion-item>
+
+        <ion-buttons slot="start">
+          <ion-button 
+            (click)="camContra()"
+            color="warning"
+            mode="ios"
+          >Cambiar contraseña</ion-button>
+        </ion-buttons>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
