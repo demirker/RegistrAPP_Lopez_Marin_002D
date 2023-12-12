@@ -1,0 +1,59 @@
+<ion-content class="background_negro">
+  <ion-card class="centrado-carta">
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-input [(ngModel)]="data.correo" type="email" placeholder="Correo"></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <ion-list>
+        <ion-item>
+          <ion-input [(ngModel)]="data.nombre" type="text" placeholder="nombre"></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <ion-list>
+        <ion-item>
+          <ion-input [(ngModel)]="data.apellido" type="text" placeholder="apellido"></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <ion-list>
+        <ion-item>
+          <ion-input [(ngModel)]="data.contrasena" type="password" placeholder="contraseña"></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <ion-list>
+        <ion-item>
+          <ion-input [(ngModel)]="data.contacto" type="text" placeholder="contacto"></ion-input>
+        </ion-item>
+      </ion-list>
+
+      <ion-list>
+        <ion-item>
+          <ion-select [(ngModel)]="data.role" placeholder="seleccione rol">
+            <ion-select-option value="Usuario">Usuario</ion-select-option>
+            <ion-select-option value="Dueño">Dueño</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+      <ion-buttons slot="start">
+        <ion-back-button
+          defaultHref="/"
+          text="Cancelar"
+          color="warning"
+          mode="ios"
+        >
+        </ion-back-button>
+        <ion-button 
+          (click)="crearAlumno()"
+          color="warning"
+          mode="ios"
+        >Crear Cuenta</ion-button>
+      </ion-buttons>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

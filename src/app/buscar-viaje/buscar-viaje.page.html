@@ -1,0 +1,126 @@
+<ion-content class="background_negro">
+  <ion-card class="centrado-carta">
+    <!--no posee viaje-->
+    <ion-card-content *ngIf="pas != true"> 
+      <ion-list *ngFor="let Viaje of resultadosB">
+        <iframe 
+          width="300"
+          height="340" 
+          style="border:0 frameborder=0" 
+          Loading="lazy" 
+          allowfullscreen 
+          [src]="getGoogleMapsUrl(Viaje.lugar)">
+        </iframe>
+        <ion-item lines="none">
+          <ion-label *ngIf="resultadosB.length > 0">
+            Nombre: {{Viaje.nombre}}</ion-label>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-label *ngIf="resultadosB.length > 0">
+            Contacto: {{Viaje.contacto}}</ion-label>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-label *ngIf="resultadosB.length > 0">
+            Capacidad: {{Viaje.capacidad}}</ion-label>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-label *ngIf="resultadosB.length > 0">
+            Patente: {{Viaje.patente}}</ion-label>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-label *ngIf="resultadosB.length > 0">
+            Lugar: {{Viaje.lugar}}</ion-label>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-label *ngIf="resultadosB.length > 0">
+            Precio: ${{Viaje.precio}}</ion-label>
+        </ion-item>
+
+        <ion-list>
+          <ion-item lines="none">
+            <ion-label *ngIf="resultadosB.length > 0">
+              Pasajeros: {{Viaje.pasajero}}</ion-label>
+          </ion-item>
+        </ion-list>
+
+        <ion-buttons slot="start" *ngIf="Viaje.capacidad > 0">
+          <ion-button 
+            color="warning"
+            mode="ios"
+            (click)="editar(Viaje.id)"
+          >Seleccionar viaje</ion-button>
+        </ion-buttons>
+      </ion-list>
+    </ion-card-content>
+
+    <!--posee viaje-->
+    <ion-card-content *ngIf="pas == true"> 
+      <ion-list *ngFor="let Viaje of resultadosD">
+        <iframe 
+          width="300"
+          height="340" 
+          style="border:0 frameborder=0" 
+          Loading="lazy" 
+          allowfullscreen 
+          [src]="getGoogleMapsUrl(Viaje.lugar)">
+        </iframe>
+        <ion-item lines="none">
+          <ion-label *ngIf="resultadosD.length > 0">
+            Nombre: {{Viaje.nombre}}</ion-label>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-label *ngIf="resultadosD.length > 0">
+            Contacto: {{Viaje.contacto}}</ion-label>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-label *ngIf="resultadosD.length > 0">
+            Capacidad: {{Viaje.capacidad}}</ion-label>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-label *ngIf="resultadosD.length > 0">
+            Patente: {{Viaje.patente}}</ion-label>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-label *ngIf="resultadosD.length > 0">
+            Lugar: {{Viaje.lugar}}</ion-label>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-label *ngIf="resultadosD.length > 0">
+            Precio: ${{Viaje.precio}}</ion-label>
+        </ion-item>
+
+        <ion-list>
+          <ion-item lines="none">
+            <ion-label *ngIf="resultadosD.length > 0">
+              Pasajeros: {{Viaje.pasajero}}</ion-label>
+          </ion-item>
+        </ion-list>
+
+        <ion-buttons slot="start">
+          <ion-back-button
+            defaultHref="/"
+            text="Cancelar"
+            color="warning"
+            mode="ios">
+          </ion-back-button>
+
+          <ion-button 
+            color="warning"
+            mode="ios"
+            (click)="editar2(Viaje.id, resultadosA[0].nombre)"
+          >Salir del viaje</ion-button>
+        </ion-buttons>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

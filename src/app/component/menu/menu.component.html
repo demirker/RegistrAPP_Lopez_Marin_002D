@@ -1,0 +1,108 @@
+<!--toolbar-->
+<ion-header class="background_chocolate">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+      <ion-avatar slot="end" class="imagen-recarga">
+        <img src="/assets/recargar.png" (click)="recargar()">
+      </ion-avatar>
+    </ion-buttons>
+    <ion-avatar class="centrado-logo">
+      <img src="/assets/logo.png">
+    </ion-avatar>
+    <ion-img slot="end" class="imagen-duoc"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Logo_DuocUC.svg/711px-Logo_DuocUC.svg.png">
+    </ion-img>
+  </ion-toolbar>
+</ion-header>
+
+<!--menu amburguesa-->
+<ion-menu contentId="main-content">
+  <ion-list *ngIf="!login">
+    <ion-menu-toggle>
+      <ion-item>
+        <ion-button routerLink="/inicio" class="centrado-contenido" color="warning"
+          >Inicio</ion-button>
+      </ion-item>
+    </ion-menu-toggle>
+
+    <ion-menu-toggle>
+      <ion-item>
+        <ion-button routerLink="/iniciar-sesion" class="centrado-contenido" color="warning"
+          >Iniciar Sesion</ion-button>
+      </ion-item>
+    </ion-menu-toggle>
+
+    <ion-menu-toggle>
+      <ion-item>
+        <ion-button routerLink="/registro" class="centrado-contenido" color="warning"
+          >Registrarse</ion-button>
+      </ion-item>
+    </ion-menu-toggle>
+
+    <ion-menu-toggle>
+      <ion-item>
+        <ion-button routerLink="/info" class="centrado-contenido" color="warning"
+          >Info</ion-button>
+      </ion-item>
+    </ion-menu-toggle>
+  </ion-list>
+  
+  <ion-list *ngIf="login">
+    <ion-item lines="none">
+      <ion-avatar slot="start">
+        <img src="/assets/avatar-alumno.png">
+      </ion-avatar>
+      <ion-label *ngIf="resultados.length > 0">
+        {{resultados[0].nombre}}
+        {{resultados[0].apellido}}
+      </ion-label>
+    </ion-item>
+    <ion-menu-toggle>
+      <ion-item>
+        <ion-button routerLink="/inicio" class="centrado-contenido" color="warning"
+          >Inicio</ion-button>
+      </ion-item>
+    </ion-menu-toggle>
+
+    <ion-menu-toggle *ngIf="resultados.length > 0 && resultados[0].role === 'Usuario'">
+      <ion-item>
+        <ion-button routerLink="/buscar-viaje" class="centrado-contenido" color="warning"
+          >Buscar viaje</ion-button>
+      </ion-item>
+    </ion-menu-toggle>
+
+    <ion-menu-toggle *ngIf="resultados.length > 0 && resultados[0].role === 'Dueño'">
+      <ion-item>
+        <ion-button routerLink="/viaje" class="centrado-contenido" color="warning"
+          >Viaje</ion-button>
+      </ion-item>
+    </ion-menu-toggle>
+
+    <ion-menu-toggle *ngIf="resultados.length > 0 && resultados[0].role === 'Dueño'">
+      <ion-item>
+        <ion-button routerLink="/vehiculo" class="centrado-contenido" color="warning"
+          >Vehiculo</ion-button>
+      </ion-item>
+    </ion-menu-toggle>
+
+    <ion-menu-toggle>
+      <ion-item>
+        <ion-button routerLink="/perfil" class="centrado-contenido" color="warning"
+          >Perfil</ion-button>
+      </ion-item>
+    </ion-menu-toggle>
+
+    <ion-menu-toggle>
+      <ion-item>
+        <ion-button (click)="logOut()" class="centrado-contenido" color="warning"
+          >Cerrar sesion</ion-button>
+      </ion-item>
+    </ion-menu-toggle>
+  </ion-list>
+</ion-menu>
+
+<!--contenido (no omitir)-->
+<div id="main-content">
+
+</div>

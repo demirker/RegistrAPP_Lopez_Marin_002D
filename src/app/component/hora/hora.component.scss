@@ -1,0 +1,30 @@
+//:host se refiere al elemento contenedor del componente.
+//div se refiere al contenedor de la hora actual.
+
+/* Estilos para el contenedor principal */
+:host {
+    display: contents;
+    text-align: center;
+}
+
+/* Estilos para el contenido del ion-content */
+ion-content {
+    font-size: 24px; 
+}
+
+/* Estilos para el elemento que contiene la hora */
+div {
+    background-color: #bb6118;
+    font-size: 30px;
+    color: #312904;
+    margin-top: 20px;
+    height: auto;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 110px;
+}
+
+h2 {
+    font-size: 40px;
+}
